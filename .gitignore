@@ -1,0 +1,12 @@
+# Dependency directories
+node_modules/
+
+# Production files
+src/bundle.js
+src/style.css
+src/vendor.js
+.DS_Store
+
+# Release folder
+dist/
+

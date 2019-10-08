@@ -1,0 +1,100 @@
+diagrams-sidenav .sidenav-content {
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}
+diagrams-sidenav .sidenav-content header {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    padding: 0 24px;
+    box-sizing: border-box;
+}
+diagrams-sidenav .sidenav-content header h3 {
+    width: 100%;
+    color: #212121;
+    font-family: Roboto;
+    font-weight: 400;
+    font-size: 22px;
+    padding: 0;
+    margin: 0;
+}
+diagrams-sidenav .sidenav-content header button {
+    border: none;
+    box-sizing: border-box;
+    background-color: transparent;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+    outline: none;
+}
+
+diagrams-sidenav .sidenav-content article {
+    width: 100%;
+    box-sizing: border-box;
+}
+diagrams-sidenav .sidenav-content article ul {
+    list-style-type: none;
+}
+diagrams-sidenav .sidenav-content article ul li {
+    list-style: none;
+    border-bottom: 1px solid #E0E0E0;
+    padding: 16px 0;
+    padding-right: 24px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+}
+diagrams-sidenav .sidenav-content article ul li div {
+    width: 100%;
+    cursor: pointer;
+}
+diagrams-sidenav .sidenav-content article ul li div p {
+    padding: 0;
+    margin: 0;
+    font-family: Roboto;
+}
+diagrams-sidenav .sidenav-content article ul li div p:first-child {
+    font-size: 18px;
+    color: #212121;
+    font-weight: 400;
+}
+diagrams-sidenav .sidenav-content article ul li.is-selected div p:first-child {
+    color: #D52941;
+}
+diagrams-sidenav .sidenav-content article ul li div p:last-child {
+    font-size: 14px;
+    color: #CCC;
+    font-weight: 300;
+    margin-top: 5px;
+}
+diagrams-sidenav .sidenav-content article ul li button {
+    padding: 0;
+    cursor: pointer;
+    border: none;
+    color: #BBB;
+    background-color: transparent;
+    outline: none;
+}
+diagrams-sidenav .sidenav-content article ul li button i {
+    font-size: 20px;
+}
+
+diagrams-sidenav .sidenav-content .no-diagrams {
+  width: 200px;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  z-index: 30;
+  color: #BBB;
+  font-weight: 300;
+  font-size: 20px;
+}
+diagrams-sidenav .sidenav-content .no-diagrams i {
+  font-size: 50px;
+}

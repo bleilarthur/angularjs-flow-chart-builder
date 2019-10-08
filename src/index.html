@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <title>Diagramas</title>
+  <meta name="description" content="Chaordic desafio front-end">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <link rel="stylesheet" href="style.css" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body ng-app="diagramsApp" ng-controller="DiagramsController" ng-keydown="keyDown($event)" ng-keyup="keyUp($event)">
+  <main>
+    <header>
+      <div class="left-content">
+        <svg style="width:20px;height:20px" viewBox="0 0 24 24">
+          <path fill="#FFFFFF" d="M9,2V8H11V11H5C3.89,11 3,11.89 3,13V16H1V22H7V16H5V13H11V16H9V22H15V16H13V13H19V16H17V22H23V16H21V13C21,11.89 20.11,11 19,11H13V8H15V2H9Z"
+          />
+        </svg>
+        <span>Diagramas</span>
+        <i class="material-icons" ng-if="DiagramsService.currentDiagram && DiagramsService.currentDiagram.name">keyboard_arrow_right</i>
+        <span ng-if="DiagramsService.currentDiagram && DiagramsService.currentDiagram.name">{{ DiagramsService.currentDiagram.name }}</span>
+      </div>
+      <div class="right-content">
+        <button type="button" ng-click="DiagramsService.toggleSideNav()">
+          <span>DIAGRAMAS SALVOS</span>
+        </button>
+      </div>
+    </header>
+    <div class="content">
+      <aside>
+        <button ng-if="DiagramsService.currentDiagram && DiagramsService.currentDiagram.id" type="button" class="new-diagram" ng-click="newDiagram()">
+          Novo Diagrama   
+        </button>
+        <h5>Componentes</h5>
+        <ul>
+          <li ng-repeat="node in DiagramsService.availableNodeTypes | orderBy:'name'">
+            <button class="{{ node.type }}" ng-click="addNode(node.type)">
+              <i class="material-icons">add</i>
+            </button>
+            <p>{{ node.name }}</p>
+          </li>
+        </ul>
+      </aside>
+      <article id="diagramContainer">
+        <div class="no-nodes" ng-if="!DiagramsService.currentDiagram || !DiagramsService.currentDiagram.nodes || DiagramsService.currentDiagram.nodes.length <= 0">
+          <i class="material-icons">add</i>
+          <p>Para começar, clique em alguma forma nos Componentes para adicionar</p>
+        </div>
+        <fc-canvas ng-if="!DiagramsService.hideCanvas" model="DiagramsService.currentDiagram" selected-objects="DiagramsService.flowChartSelectedNodes" edge-style="curved"
+          callbacks="DiagramsService.callbacks"></fc-canvas>
+        <button type="button" class="save-button" title="Salvar diagrama" ng-click="saveDiagram()" ng-if="DiagramsService.currentDiagram && DiagramsService.currentDiagram.nodes && DiagramsService.currentDiagram.nodes.length > 0">
+            <i class="material-icons">save</i>
+          </button>
+      </article>
+    </div>
+  </main>
+  <div class="diagrams-sidenav" ng-class="{ 'is-open': DiagramsService.diagramsSideNavOpen }">
+    <diagrams-sidenav></diagrams-sidenav>
+  </div>
+  <div class="backdrop" ng-if="DiagramsService.diagramsSideNavOpen" ng-click="DiagramsService.toggleSideNav()"></div>
+  <script src="vendor.js"></script>
+  <script src="bundle.js"></script>
+</body>
+
+</html>

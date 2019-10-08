@@ -1,0 +1,304 @@
+body {
+  font-family: Roboto;
+  font-family: sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+.button-overlay {
+  position: absolute;
+  top: 40px;
+  left: 40px;
+  z-index: 10;
+}
+
+.button-overlay button {
+  display: block;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  border: none;
+  box-shadow: none;
+  color: #FFF;
+  font-size: 20px;
+  background-color: #F15B26;
+}
+
+.button-overlay button:hover:not(:disabled) {
+  border: 4px solid #B03911;
+  border-radius: 5px;
+
+  margin: -4px;
+  margin-bottom: 11px;
+}
+
+.button-overlay button:disabled {
+  -webkit-filter: brightness(70%);
+  filter: brightness(70%);
+}
+
+main {
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+}
+
+main .content {
+  display: flex;
+  flex: 1;
+}
+
+main header {
+  width: 100%;
+  height: 53px;
+  line-height: 36px;
+  display: flex;
+  flex-shrink: 0;
+  flex-grow: 0;
+  background-color: #D52941;
+  box-shadow: 0 2px 5px rgba(0,0,0,.26);
+  z-index: 99;
+}
+
+main header .right-content, main header .left-content {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 24px;
+  box-sizing: border-box;
+}
+
+main header .right-content {
+  justify-content: flex-end;
+}
+
+main header .right-content svg, main header .left-content svg {
+  margin-right: 10px;
+}
+
+main header .right-content span, main header .left-content span {
+  font-family: Roboto;
+  font-weight: 500;
+  font-size: 14px;
+  text-transform: uppercase;
+  color: #FFF;
+  padding: 0;
+  margin: 0;
+}
+
+main header .right-content i, main header .left-content i {
+  font-size: 20px;
+  margin: 0 10px;
+  color: #FFF;
+}
+
+main header .right-content button, main header .left-content button {
+  border: none;
+  background-color: transparent;
+  padding: 8px 18px;
+  box-sizing: border-box;
+  text-decoration: none;
+  outline: none;
+  transition: background-color 0.2s ease-out;
+  border-radius: 4px;
+}
+main header .right-content button:hover, main header .left-content button:hover {
+  background-color: #990D35;
+  transition: background-color 0.2s ease-in;
+  cursor: pointer;
+}
+
+main .content aside {
+  width: 200px;
+  background-color: #FFF;
+  border-right: 1px solid #E0E0E0;
+  padding: 24px;
+  box-sizing: border-box;
+  overflow: auto;
+}
+main .content aside .new-diagram {
+  width: 100%;
+  padding: 10px 0;
+  border: none;
+  font-size: 12px;
+  background-color: #FCD581;
+  cursor: pointer;
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,.26);
+  transition: background-color 0.15s linear;
+  color: rgba(31,45,61, 0.7);
+  outline: none;
+  border-radius: 3px;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 48px;
+}
+main .content aside .new-diagram:hover {
+  background-color: #E6C276;
+  transition: background-color 0.25s linear;
+}
+
+main .content aside h5 {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  color: #CCC;
+  font-family: Roboto;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-align: center;
+}
+main .content aside ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 36px;
+}
+main .content aside ul li {
+  text-align: center;
+  margin-bottom: 36px;
+}
+main .content aside ul li button {
+  padding: 0;
+  width: 80px;
+  height: 80px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  background-color: #F3F3F3;
+  transition: all 0.15s linear;
+}
+main .content aside ul li button.bevel {
+  -webkit-clip-path: polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%);
+  clip-path: polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%);
+}
+main .content aside ul li button.circle {
+	-webkit-clip-path: circle(50% at 50% 50%);
+  clip-path: circle(50% at 50% 50%);
+}
+main .content aside ul li button.diamond {
+	-webkit-clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+}
+main .content aside ul li button.heptagon {
+  -webkit-clip-path: polygon(50% 0%, 90% 20%, 100% 60%, 75% 100%, 25% 100%, 0% 60%, 10% 20%);
+  clip-path: polygon(50% 0%, 90% 20%, 100% 60%, 75% 100%, 25% 100%, 0% 60%, 10% 20%);
+}
+main .content aside ul li button.hexagon {
+	-webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+}
+main .content aside ul li button.octagon {
+	-webkit-clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+  clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+}
+main .content aside ul li button.oval {
+	-webkit-clip-path: ellipse(50% 30% at 50% 50%);
+  clip-path: ellipse(50% 30% at 50% 50%);
+}
+main .content aside ul li button.pentagon {
+	-webkit-clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+  clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+}
+main .content aside ul li button.rabbet {
+  -webkit-clip-path: polygon(0% 15%, 15% 15%, 15% 0%, 85% 0%, 85% 15%, 100% 15%, 100% 85%, 85% 85%, 85% 100%, 15% 100%, 15% 85%, 0% 85%);
+  clip-path: polygon(0% 15%, 15% 15%, 15% 0%, 85% 0%, 85% 15%, 100% 15%, 100% 85%, 85% 85%, 85% 100%, 15% 100%, 15% 85%, 0% 85%);
+}
+main .content aside ul li button.rectangle {
+  width: 140px;
+}
+main .content aside ul li button i {
+  color: #CCC;
+  transition: all 0.15s linear;
+}
+main .content aside ul li p {
+  padding: 0;
+  margin: 5px 0 0 0;
+  font-weight: 300;
+  font-size: 14px;
+  color: #212121;
+}
+main .content aside ul li button:hover {
+  background-color: #D52941;
+  color: #FCD581;
+  transition: all 0.25s linear;
+}
+
+main .content aside ul li button:hover i {
+  color: #FFF;
+  font-size: 36px;
+  transition: all 0.25s linear;
+}
+
+main .content article {
+  flex: 1 1 auto;
+  position: relative;
+  overflow: auto;
+}
+main .content article .no-nodes {
+  width: 300px;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  z-index: 30;
+  color: #BBB;
+  font-weight: 300;
+  font-size: 20px;
+}
+main .content article .no-nodes i {
+  font-size: 50px;
+}
+main .content article .save-button {
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 48px;
+  right: 48px;
+  z-index: 30;
+  border: none;
+  color: #FFF;
+  background-color: #FCD581;
+  color: rgba(31,45,61, 0.7);
+  cursor: pointer;
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,.26);
+  transition: background-color 0.15s linear;
+  outline: none;
+}
+main .content article .save-button:hover {
+  background-color: #E6C276;
+  transition: background-color 0.25s linear;
+}
+
+.diagrams-sidenav {
+  width: 350px;
+  height: 100vh;
+  overflow: auto;
+  position: fixed;
+  z-index: 100;
+  background-color: #FFF;
+  border-left: 1px solid #E0E0E0;
+  top: 0;
+  right: -400px;
+  transition: all 0.3s;
+}
+.diagrams-sidenav.is-open {
+  right: 0;
+  transition: all 0.5s;
+}
+
+.backdrop {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  transition: all 0.2s linear;
+  z-index: 99;
+}

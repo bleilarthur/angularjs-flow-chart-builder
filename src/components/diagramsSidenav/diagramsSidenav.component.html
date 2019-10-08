@@ -1,0 +1,25 @@
+<div class="sidenav-content">
+    <header ng-if="DiagramsService.savedDiagrams && DiagramsService.savedDiagrams.length > 0">
+        <h3>Diagramas salvos</h3>
+        <button type="button" ng-click="DiagramsService.toggleSideNav()">
+            <i class="material-icons">close</i>
+        </button>
+    </header>
+    <article ng-if="DiagramsService.savedDiagrams && DiagramsService.savedDiagrams.length > 0">
+        <ul>
+            <li ng-repeat="savedDiagram in DiagramsService.savedDiagrams | orderBy:'date':true">
+                <div ng-click="DiagramsService.setCurrentDiagram(savedDiagram)">
+                    <p>{{ savedDiagram.name }}</p>
+                    <p>{{ savedDiagram.date | date:'dd/MM/yyyy - HH:mm' }}</p>
+                </div>
+                <button type="button" ng-click="deleteDiagram(savedDiagram)">
+                    <i class="material-icons" title="Excluir diagrama">delete</i>
+                </button>
+            </li>
+        </ul>
+    </article>
+    <div class="no-diagrams" ng-if="!DiagramsService.savedDiagrams || DiagramsService.savedDiagrams.length <= 0">
+        <i class="material-icons">sentiment_very_dissatisfied</i>
+        <p>Você não possui nenhum diagrama salvo</p>
+    </div>
+</div>
