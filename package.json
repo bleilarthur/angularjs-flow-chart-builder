@@ -9,7 +9,7 @@
   "author": "Arthur Bleil",
   "license": "ISC",
   "devDependencies": {
-    "angular": "1.6.4",
+    "angular": "1.8.0",
     "angular-local-storage": "0.6.0",
     "angular-mocks": "1.6.4",
     "browser-sync": "2.18.12",
